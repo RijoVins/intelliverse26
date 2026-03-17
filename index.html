@@ -157,7 +157,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 8rem 2rem 6rem;
+      padding: 3rem 2rem 6rem;
       position: relative;
     }
 
@@ -772,11 +772,6 @@
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 768px) {
-      #home {
-        padding: 5rem 1.5rem 4rem;
-        min-height: auto;
-      }
-      
       .nav-links {
         display: none;
         flex-direction: column;
@@ -835,7 +830,8 @@
       <li><a href="#non-technical">Non-Technical</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button onclick="openModal('payment')" class="nav-register" style="margin-left: 10px; background: linear-gradient(135deg, #10b981, #047857);">Pay Now</button>
+    <a href="https://forms.gle/pAUD99gE9Mq1s1679" target="_blank" class="nav-register"
+      style="text-decoration:none;display:inline-block;">Register Now</a>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -844,14 +840,17 @@
   <!-- HERO -->
   <section id="home">
     <div style="position:relative;z-index:1">
+      <h3 style="color: var(--white); font-family: 'Outfit', sans-serif; font-size: 1.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; text-align: center;">Stella Mary's College Of Engineering</h3>
+      <h4 style="color: var(--blue-light); font-family: 'Outfit', sans-serif; font-size: 1.4rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1.5rem; text-align: center;">Department of Artificial Intelligence And Data Science</h4>
       <div class="hero-badge reveal">🏆 National Level Technical Symposium</div>
       <h1 class="hero-title reveal" style="transition-delay:0.1s">INTELLIVERSE<br>2K26</h1>
       <p class="hero-subtitle reveal" style="transition-delay:0.2s">National Level Technical Symposium</p>
+      <div style="color: var(--gold-light); font-family: 'Outfit', sans-serif; font-size: 1.1rem; font-weight: 600; letter-spacing: 0.1em; margin-bottom: 1rem; text-align: center;">Event Date: 01/04/2026</div>
       <p class="hero-tagline reveal" style="transition-delay:0.3s">Explore Events &amp; Read Rules</p>
       <div class="hero-cta reveal" style="transition-delay:0.4s">
         <a href="#technical" class="btn-primary">💻 View Technical Events</a>
         <a href="#non-technical" class="btn-outline">🎨 View Non-Technical Events</a>
-        <button onclick="openModal('payment')" class="btn-primary" style="background: linear-gradient(135deg, #10b981, #047857); border: none; font-family: 'Inter', sans-serif;">💳 Pay Now</button>
+        <button onclick="openModal('payment')" class="btn-primary" style="background: linear-gradient(135deg, #10b981, #047857); border: none; font-family: 'Inter', sans-serif; cursor: pointer;">💳 Pay Now</button>
       </div>
     </div>
   </section>
@@ -981,30 +980,30 @@
       <div class="contact-card reveal" style="transition-delay:0.1s">
         <div class="contact-card-icon">👨‍🎓</div>
         <h4>Student Coordinators</h4>
-        <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem; font-size: 0.9rem;">
-          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.3rem;">
-            <span style="color: var(--text-primary); font-weight: 500;">Gangesh K</span>
-            <span style="color: var(--blue-light); font-family: monospace; font-size: 0.95rem;">8122571823</span>
+        <div style="display: flex; flex-direction: column; gap: 0.4rem; margin-top: 1rem; font-size: 0.78rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+            <span style="color: var(--text-primary); font-weight: 500;">Mr. Gangesh K</span>
+            <span style="color: var(--blue-light); font-family: monospace; font-size: 0.78rem; white-space: nowrap;">☎️ 8122571823</span>
           </div>
-          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.3rem;">
-            <span style="color: var(--text-primary); font-weight: 500;">Praveen A</span>
-            <span style="color: var(--blue-light); font-family: monospace; font-size: 0.95rem;">8940185116</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+            <span style="color: var(--text-primary); font-weight: 500;">Mr. Praveen A</span>
+            <span style="color: var(--blue-light); font-family: monospace; font-size: 0.78rem; white-space: nowrap;">☎️ 8940185116</span>
           </div>
-          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.3rem;">
-            <span style="color: var(--text-primary); font-weight: 500;">Rijo Vins V</span>
-            <span style="color: var(--blue-light); font-family: monospace; font-size: 0.95rem;">6374280954</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+            <span style="color: var(--text-primary); font-weight: 500;">Mr. Rijo Vins V</span>
+            <span style="color: var(--blue-light); font-family: monospace; font-size: 0.78rem; white-space: nowrap;">☎️ 6374280954</span>
           </div>
-          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.3rem;">
-            <span style="color: var(--text-primary); font-weight: 500;">Ashva Rishenth M</span>
-            <span style="color: var(--blue-light); font-family: monospace; font-size: 0.95rem;">9488338010</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+            <span style="color: var(--text-primary); font-weight: 500;">Mr. Ashva M</span>
+            <span style="color: var(--blue-light); font-family: monospace; font-size: 0.78rem; white-space: nowrap;">☎️ 9488338010</span>
           </div>
-          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.3rem;">
-            <span style="color: var(--text-primary); font-weight: 500;">Mohammed Ashif </span>
-            <span style="color: var(--blue-light); font-family: monospace; font-size: 0.95rem;">9566907242</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+            <span style="color: var(--text-primary); font-weight: 500;">Mr. Ashif</span>
+            <span style="color: var(--blue-light); font-family: monospace; font-size: 0.78rem; white-space: nowrap;">☎️ 9566907242</span>
           </div>
-          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.3rem;">
-            <span style="color: var(--text-primary); font-weight: 500;">Vishal N</span>
-            <span style="color: var(--blue-light); font-family: monospace; font-size: 0.95rem;">8015628822</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+            <span style="color: var(--text-primary); font-weight: 500;">Mr. Vishal N</span>
+            <span style="color: var(--blue-light); font-family: monospace; font-size: 0.78rem; white-space: nowrap;">☎️ 8015628822</span>
           </div>
         </div>
       </div>
@@ -1370,6 +1369,24 @@
     </div>
   </div>
 
+  <!-- Payment QR Code -->
+  <div class="modal-overlay" id="modal-payment">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('payment')">✕</button>
+      <div class="modal-banner">
+        <div class="modal-icon">💳</div>
+        <h2 class="modal-title">Payment via UPI</h2>
+        <p class="modal-desc">Scan the QR code below with your UPI app to complete the payment.</p>
+      </div>
+      <div class="modal-body" style="text-align: center;">
+        <div style="display: inline-block; width: 280px; height: 280px; overflow: hidden; border-radius: 12px; margin: 2rem 0;">
+          <img src="images/WhatsApp Image 2026-03-17 at 3.15.08 PM.jpeg" alt="UPI QR Code" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+        </div>
+        <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-top: 1.5rem;">Please scan this QR code with any UPI-enabled application to complete your payment for INTELLIVERSE 2K26.</p>
+      </div>
+    </div>
+  </div>
+
   <!-- Snap Click (Photography) -->
   <div class="modal-overlay" id="modal-snapclick">
     <div class="modal gold-modal">
@@ -1399,32 +1416,6 @@
             style="width: 100%; display: block; background: linear-gradient(135deg, var(--gold), #d97706); color: #000;">🔗
             Register for Snap Click</a>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Payment Modal -->
-  <div class="modal-overlay" id="modal-payment">
-    <div class="modal">
-      <button class="modal-close" onclick="closeModal('payment')">✕</button>
-      <div class="modal-banner" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, transparent 100%);">
-        <div class="modal-icon">💳</div>
-        <h2 class="modal-title" style="background: linear-gradient(90deg, #fff, #34d399); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Scan &amp; Pay</h2>
-        <p class="modal-desc">Scan the QR code below to make your payment securely via any UPI app.</p>
-      </div>
-      <div class="modal-body" style="text-align: center;">
-        <img src="images/WhatsApp%20Image%202026-03-17%20at%203.15.08%20PM.jpeg" alt="UPI QR Code" style="max-width: 100%; max-height: 400px; border-radius: 16px; border: 1px solid var(--glass-border); margin-bottom: 1.5rem; background: white;" />
-        <div class="rules-section">
-          <ul class="rules-list">
-            <li class="rule-item" style="justify-content: center;">
-              <span class="rule-text">UPI ID: <strong>jjeni5606@okaxis</strong></span>
-            </li>
-            <li class="rule-item" style="justify-content: center;">
-              <span class="rule-text">Amount: <strong>₹200.00</strong></span>
-            </li>
-          </ul>
-        </div>
-        <span class="rule-text" style="display: block; margin-top: 1rem; color: var(--text-secondary);">Scan to pay with any UPI app (GPay, PhonePe, Paytm, etc.)</span>
       </div>
     </div>
   </div>
