@@ -800,6 +800,11 @@
         padding: 10rem 2rem 6rem;
       }
 
+      #home > div > div {
+        flex-direction: column;
+        text-align: center !important;
+      }
+
       #home h3 {
         font-size: 0.95rem !important;
         white-space: normal;
@@ -808,11 +813,18 @@
         font-weight: 700 !important;
         line-height: 1.2;
         letter-spacing: 0.05em;
+        text-align: center !important;
+        margin-bottom: 0.3rem !important;
       }
 
       #home h4 {
         font-size: 0.75rem !important;
         font-weight: 400 !important;
+        text-align: center !important;
+      }
+
+      #home img {
+        max-width: 80px !important;
       }
 
       .modal-banner,
@@ -857,8 +869,13 @@
   <!-- HERO -->
   <section id="home">
     <div style="position:relative;z-index:1">
-      <h3 style="color: var(--white); font-family: 'Outfit', sans-serif; font-size: 1.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; text-align: center;">Stella Mary's College Of Engineering</h3>
-      <h4 style="color: var(--blue-light); font-family: 'Outfit', sans-serif; font-size: 1.4rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 1.5rem; text-align: center;">Department of Artificial Intelligence And Data Science</h4>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem;">
+        <img src="images/SMCE LOGO-02 (1).png" alt="SMCE Logo" style="max-width: 100px; height: auto; flex-shrink: 0;">
+        <div>
+          <h3 style="color: var(--white); font-family: 'Outfit', sans-serif; font-size: 1.8rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.5rem; text-align: left;">Stella Mary's College Of Engineering</h3>
+          <h4 style="color: var(--blue-light); font-family: 'Outfit', sans-serif; font-size: 1.4rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; text-align: left;">Department of Artificial Intelligence And Data Science</h4>
+        </div>
+      </div>
       <div class="hero-badge reveal">🏆 National Level Technical Symposium</div>
       <h1 class="hero-title reveal" style="transition-delay:0.1s">INTELLIVERSE<br>2K26</h1>
       <p class="hero-subtitle reveal" style="transition-delay:0.2s">National Level Technical Symposium</p>
