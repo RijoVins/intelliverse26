@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INTELLIVERSE 2K26 | National Level Technical Symposium</title>
+  <meta name="description"
+    content="INTELLIVERSE 2K26 — National Level Technical Symposium. Explore technical events, rules, and guidelines for Poster Presentation, Debugging, Prompt Crafting, and Canva Design." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --blue: #0ea5e9;
+      --blue-dark: #0369a1;
+      --blue-light: #38bdf8;
+      --gold: #f59e0b;
+      --gold-light: #fcd34d;
+      --white: #f0f9ff;
+      --glass-bg: rgba(14, 165, 233, 0.06);
+      --glass-border: rgba(14, 165, 233, 0.2);
+      --glass-border-gold: rgba(245, 158, 11, 0.4);
+      --text-primary: #e0f2fe;
+      --text-secondary: #94a3b8;
+      --bg-dark: #020b18;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      min-height: 100vh;
+      overflow-x: hidden;
+      background-image:
+        radial-gradient(ellipse 80% 60% at 50% -10%, rgba(14, 165, 233, 0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 50% at 80% 80%, rgba(245, 158, 11, 0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 10% 90%, rgba(14, 165, 233, 0.07) 0%, transparent 60%);
+    }
+
+    /* ─── SCROLLBAR ─── */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #020b18;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--blue-dark);
+      border-radius: 3px;
+    }
+
+    /* ─── NAVBAR ─── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 68px;
+      background: rgba(2, 11, 24, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .nav-logo {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 800;
+      font-size: 1.4rem;
+      background: linear-gradient(90deg, var(--blue-light), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 0.05em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--blue-light);
+    }
+
+    .nav-register {
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1.3rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: 0.04em;
+    }
+
+    .nav-register:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(14, 165, 233, 0.4);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--blue-light);
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    /* ─── HERO ─── */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8rem 2rem 6rem;
+      position: relative;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      color: var(--gold-light);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.4rem 1.2rem;
+      border-radius: 50px;
+      letter-spacing: 0.1em;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(3.5rem, 10vw, 7rem);
+      font-weight: 900;
+      line-height: 1;
+      background: linear-gradient(135deg, #fff 0%, var(--blue-light) 50%, var(--gold) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-subtitle {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      font-weight: 300;
+      color: var(--text-secondary);
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-tagline {
+      font-size: 1.1rem;
+      color: var(--blue-light);
+      font-weight: 400;
+      margin-bottom: 3rem;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue), var(--blue-dark));
+      color: #fff;
+      padding: 0.85rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.25s, box-shadow 0.25s;
+      font-family: 'Inter', sans-serif;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 32px rgba(14, 165, 233, 0.45);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--gold-light);
+      padding: 0.85rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      cursor: pointer;
+      transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+      font-family: 'Inter', sans-serif;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-outline:hover {
+      transform: translateY(-3px);
+      background: rgba(245, 158, 11, 0.1);
+      box-shadow: 0 10px 32px rgba(245, 158, 11, 0.2);
+    }
+
+    /* ─── FLOATING PARTICLES ─── */
+    .particles {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      animation: float linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(110vh) scale(0);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      90% {
+        opacity: 0.6;
+      }
+
+      100% {
+        transform: translateY(-10vh) scale(1);
+        opacity: 0;
+      }
+    }
+
+    /* ─── SECTIONS ─── */
+    section {
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+      background: linear-gradient(90deg, #fff, var(--blue-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-divider {
+      width: 80px;
+      height: 3px;
+      margin: 0.8rem auto 0;
+      background: linear-gradient(90deg, var(--blue), var(--gold));
+      border-radius: 2px;
+    }
+
+    /* ─── TECHNICAL EVENTS ─── */
+    #technical {
+      padding: 6rem 2rem;
+    }
+
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.8rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ─── EVENT CARD ─── */
+    .event-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 2.2rem 2rem;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s, border-color 0.3s;
+      text-align: left;
+      backdrop-filter: blur(12px);
+    }
+
+    .event-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(14, 165, 233, 0.12) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .event-card:hover::before {
+      opacity: 1;
+    }
+
+    .event-card:hover {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 24px 60px rgba(14, 165, 233, 0.22), 0 0 0 1px rgba(14, 165, 233, 0.35);
+      border-color: var(--blue);
+    }
+
+    .event-card-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin-bottom: 1.4rem;
+      background: rgba(14, 165, 233, 0.12);
+      border: 1px solid rgba(14, 165, 233, 0.25);
+    }
+
+    .event-card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .event-card-desc {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .event-card-link {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--blue-light);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: gap 0.2s;
+    }
+
+    .event-card:hover .event-card-link {
+      gap: 0.8rem;
+    }
+
+    /* ─── NON-TECHNICAL ─── */
+    #non-technical {
+      padding: 6rem 2rem;
+    }
+
+    /* Gold accent cards for non-technical events */
+    .event-card.gold-card:hover {
+      box-shadow: 0 24px 60px rgba(245, 158, 11, 0.22), 0 0 0 1px rgba(245, 158, 11, 0.4);
+      border-color: var(--gold);
+    }
+
+    .event-card.gold-card:hover .event-card-link {
+      color: var(--gold-light);
+    }
+
+    .event-card.gold-card .event-card-icon {
+      background: rgba(245, 158, 11, 0.10);
+      border-color: rgba(245, 158, 11, 0.25);
+    }
+
+    .event-card.gold-card::before {
+      background: radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.10) 0%, transparent 60%);
+    }
+
+    .modal.gold-modal .modal-banner {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, transparent 100%);
+    }
+
+    .modal.gold-modal .modal-title {
+      background: linear-gradient(90deg, #fff, var(--gold-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ─── CONTACT ─── */
+    #contact {
+      padding: 6rem 2rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .contact-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .contact-card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-card h4 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.4rem;
+    }
+
+    .contact-card p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: rgba(2, 11, 24, 0.9);
+      border-top: 1px solid var(--glass-border);
+      padding: 3rem 2rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-logo {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 900;
+      font-size: 2rem;
+      background: linear-gradient(90deg, var(--blue-light), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-sub {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.2s;
+      text-decoration: none;
+    }
+
+    .social-icon:hover {
+      border-color: var(--blue);
+      transform: translateY(-3px);
+    }
+
+    .footer-divider {
+      border: none;
+      border-top: 1px solid var(--glass-border);
+      margin: 1rem 0;
+    }
+
+    .footer-copy {
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+    }
+
+    .footer-college {
+      color: var(--blue-light);
+      font-weight: 600;
+    }
+
+    /* ─── MODAL ─── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(2, 11, 24, 0.85);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal {
+      background: linear-gradient(135deg, rgba(14, 165, 233, 0.08) 0%, rgba(2, 11, 24, 0.95) 100%);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      max-width: 700px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 0;
+      transform: scale(0.92) translateY(20px);
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+    }
+
+    .modal-overlay.open .modal {
+      transform: scale(1) translateY(0);
+    }
+
+    .modal-banner {
+      padding: 2.5rem 2.5rem 2rem;
+      border-bottom: 1px solid var(--glass-border);
+      background: linear-gradient(135deg, rgba(14, 165, 233, 0.12) 0%, transparent 100%);
+      border-radius: 24px 24px 0 0;
+    }
+
+    .modal-icon {
+      font-size: 3rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .modal-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 900;
+      background: linear-gradient(90deg, #fff, var(--blue-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.6rem;
+    }
+
+    .modal-desc {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .modal-body {
+      padding: 2.5rem;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.5rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--glass-border);
+      color: var(--text-secondary);
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-close:hover {
+      background: rgba(14, 165, 233, 0.15);
+      color: #fff;
+    }
+
+    /* ─── RULES ─── */
+    .rules-section {
+      margin-bottom: 2rem;
+    }
+
+    .rules-category {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .rules-category::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(245, 158, 11, 0.2);
+    }
+
+    .rules-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .rule-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      background: rgba(14, 165, 233, 0.05);
+      border: 1px solid rgba(14, 165, 233, 0.12);
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .rule-item:hover {
+      border-color: rgba(14, 165, 233, 0.3);
+      background: rgba(14, 165, 233, 0.08);
+    }
+
+    .rule-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      margin-top: 0.05rem;
+    }
+
+    .rule-text {
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    .rule-text strong {
+      color: var(--gold-light);
+      font-weight: 700;
+    }
+
+    /* ─── STICKY REGISTER ─── */
+    .sticky-register {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 150;
+      background: linear-gradient(135deg, var(--gold), #d97706);
+      color: #000;
+      font-weight: 800;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      padding: 0.85rem 1.8rem;
+      border-radius: 50px;
+      cursor: pointer;
+      border: none;
+      letter-spacing: 0.05em;
+      box-shadow: 0 8px 32px rgba(245, 158, 11, 0.4);
+      transition: transform 0.25s, box-shadow 0.25s;
+      animation: pulse-gold 2.5s ease-in-out infinite;
+    }
+
+    .sticky-register:hover {
+      transform: translateY(-4px) scale(1.04);
+      box-shadow: 0 14px 48px rgba(245, 158, 11, 0.6);
+    }
+
+    @keyframes pulse-gold {
+
+      0%,
+      100% {
+        box-shadow: 0 8px 32px rgba(245, 158, 11, 0.4);
+      }
+
+      50% {
+        box-shadow: 0 8px 48px rgba(245, 158, 11, 0.7);
+      }
+    }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: rgba(2, 11, 24, 0.97);
+        padding: 2rem;
+        gap: 1.5rem;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .nav-register {
+        display: none;
+      }
+
+      .modal-banner,
+      .modal-body {
+        padding: 1.5rem;
+      }
+    }
+
+    /* ─── GLOW LINES ─── */
+    .glow-line {
+      width: 1px;
+      height: 100px;
+      position: absolute;
+      background: linear-gradient(to bottom, transparent, var(--blue), transparent);
+      opacity: 0.4;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Floating Particles -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Sticky Register Button -->
+  <a href="https://forms.gle/pAUD99gE9Mq1s1679" target="_blank" class="sticky-register">✨ Register Now</a>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-logo">INTELLIVERSE 2K26</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#technical">Technical Events</a></li>
+      <li><a href="#non-technical">Non-Technical</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="https://forms.gle/pAUD99gE9Mq1s1679" target="_blank" class="nav-register"
+      style="text-decoration:none;display:inline-block;">Register Now</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home">
+    <div style="position:relative;z-index:1">
+      <div class="hero-badge reveal">🏆 National Level Technical Symposium</div>
+      <h1 class="hero-title reveal" style="transition-delay:0.1s">INTELLIVERSE<br>2K26</h1>
+      <p class="hero-subtitle reveal" style="transition-delay:0.2s">National Level Technical Symposium</p>
+      <p class="hero-tagline reveal" style="transition-delay:0.3s">Explore Events &amp; Read Rules</p>
+      <div class="hero-cta reveal" style="transition-delay:0.4s">
+        <a href="#technical" class="btn-primary">💻 View Technical Events</a>
+        <a href="#non-technical" class="btn-outline">🎨 View Non-Technical Events</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNICAL EVENTS -->
+  <section id="technical">
+    <div class="section-header reveal">
+      <span class="section-tag">⚡ Featured Events</span>
+      <h2 class="section-title">Technical Events</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="events-grid">
+
+      <div class="event-card reveal" onclick="openModal('poster')" id="card-poster">
+        <div class="event-card-icon">📋</div>
+        <div class="event-card-title">Poster Presentation</div>
+        <div class="event-card-desc">Present your research or innovative idea visually and defend it before a panel of
+          judges.</div>
+        <div class="event-card-link">View Rules <span>→</span></div>
+      </div>
+
+      <div class="event-card reveal" onclick="openModal('debugging')" id="card-debugging" style="transition-delay:0.1s">
+        <div class="event-card-icon">🐛</div>
+        <div class="event-card-title">Debugging</div>
+        <div class="event-card-desc">Race against time to identify and fix bugs in a given codebase with precision and
+          speed.</div>
+        <div class="event-card-link">View Rules <span>→</span></div>
+      </div>
+
+      <div class="event-card reveal" onclick="openModal('prompt')" id="card-prompt" style="transition-delay:0.2s">
+        <div class="event-card-icon">🤖</div>
+        <div class="event-card-title">Prompt Crafting</div>
+        <div class="event-card-desc">Engineer precise AI prompts to solve complex challenges and unlock the best AI
+          outputs.</div>
+        <div class="event-card-link">View Rules <span>→</span></div>
+      </div>
+
+      <div class="event-card reveal" onclick="openModal('canva')" id="card-canva" style="transition-delay:0.3s">
+        <div class="event-card-icon">🎨</div>
+        <div class="event-card-title">Canva Design</div>
+        <div class="event-card-desc">Create stunning visual designs using Canva's platform to communicate ideas
+          beautifully.</div>
+        <div class="event-card-link">View Rules <span>→</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- NON-TECHNICAL EVENTS -->
+  <section id="non-technical">
+    <div class="section-header reveal">
+      <span class="section-tag">🎭 Entertainment &amp; Gaming</span>
+      <h2 class="section-title">Non-Technical Events</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="events-grid">
+
+      <div class="event-card gold-card reveal" onclick="openModal('freefire')" id="card-freefire">
+        <div class="event-card-icon">🔫</div>
+        <div class="event-card-title">Free Fire</div>
+        <div class="event-card-desc">Squad up and battle it out in Esports Elite Free Fire — the ultimate mobile battle
+          royale showdown.</div>
+        <div class="event-card-link" style="color:var(--gold-light)">View Rules <span>→</span></div>
+      </div>
+
+      <div class="event-card gold-card reveal" onclick="openModal('efootball')" id="card-efootball"
+        style="transition-delay:0.1s">
+        <div class="event-card-icon">⚽</div>
+        <div class="event-card-title">E-Football</div>
+        <div class="event-card-desc">Face off in a tense 1v1 e-football clash with penalty shootouts deciding close
+          battles.</div>
+        <div class="event-card-link" style="color:var(--gold-light)">View Rules <span>→</span></div>
+      </div>
+
+      <div class="event-card gold-card reveal" onclick="openModal('charades')" id="card-charades"
+        style="transition-delay:0.2s">
+        <div class="event-card-icon">🎭</div>
+        <div class="event-card-title">Dumb Charades</div>
+        <div class="event-card-desc">Act it out silently — movies, songs, and dialogues across three escalating rounds
+          of fun.</div>
+        <div class="event-card-link" style="color:var(--gold-light)">View Rules <span>→</span></div>
+      </div>
+
+      <div class="event-card gold-card reveal" onclick="openModal('pic2song')" id="card-pic2song"
+        style="transition-delay:0.3s">
+        <div class="event-card-icon">🎵</div>
+        <div class="event-card-title">Pic 2 Song</div>
+        <div class="event-card-desc">Guess the song from a picture — quick reflexes and music knowledge win the day.
+        </div>
+        <div class="event-card-link" style="color:var(--gold-light)">View Rules <span>→</span></div>
+      </div>
+
+      <div class="event-card gold-card reveal" onclick="openModal('snapclick')" id="card-snapclick"
+        style="transition-delay:0.4s">
+        <div class="event-card-icon">📸</div>
+        <div class="event-card-title">Snap Click</div>
+        <div class="event-card-desc">Capture the perfect shot with your phone in 60 minutes — raw, unedited, and
+          authentic.</div>
+        <div class="event-card-link" style="color:var(--gold-light)">View Rules <span>→</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-header reveal">
+      <span class="section-tag">📞 Get In Touch</span>
+      <h2 class="section-title">Contact Us</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <div class="contact-card-icon">👨‍💼</div>
+        <h4>Faculty Coordinators</h4>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem; font-size: 0.9rem;">
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.3rem;">
+            <span style="color: var(--text-primary); font-weight: 500;">Mr. R. Robert</span>
+            <span style="color: var(--blue-light); font-family: monospace; font-size: 0.95rem;">7418714763</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.3rem;">
+            <span style="color: var(--text-primary); font-weight: 500;">Dr. M. Supriya</span>
+            <span style="color: var(--blue-light); font-family: monospace; font-size: 0.95rem;">9790542912</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-card reveal" style="transition-delay:0.1s">
+        <div class="contact-card-icon">👨‍🎓</div>
+        <h4>Student Coordinators</h4>
+        <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem; font-size: 0.9rem;">
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.3rem;">
+            <span style="color: var(--text-primary); font-weight: 500;">Gangesh K</span>
+            <span style="color: var(--blue-light); font-family: monospace; font-size: 0.95rem;">8122571823</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.3rem;">
+            <span style="color: var(--text-primary); font-weight: 500;">Praveen A</span>
+            <span style="color: var(--blue-light); font-family: monospace; font-size: 0.95rem;">8940185116</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.3rem;">
+            <span style="color: var(--text-primary); font-weight: 500;">Rijo Vins V</span>
+            <span style="color: var(--blue-light); font-family: monospace; font-size: 0.95rem;">6374280954</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.3rem;">
+            <span style="color: var(--text-primary); font-weight: 500;">Ashva Rishenth M</span>
+            <span style="color: var(--blue-light); font-family: monospace; font-size: 0.95rem;">9488338010</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.3rem;">
+            <span style="color: var(--text-primary); font-weight: 500;">Mohammed Ashif </span>
+            <span style="color: var(--blue-light); font-family: monospace; font-size: 0.95rem;">9566907242</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding-bottom: 0.3rem;">
+            <span style="color: var(--text-primary); font-weight: 500;">Vishal N</span>
+            <span style="color: var(--blue-light); font-family: monospace; font-size: 0.95rem;">8015628822</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-card reveal" style="transition-delay:0.4s">
+        <div class="contact-card-icon">📧</div>
+        <h4>Email</h4>
+        <p>intelliverse2k26<br>@college.edu.in</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">INTELLIVERSE 2K26</div>
+    <div class="footer-sub">National Level Technical Symposium</div>
+    <div class="footer-socials">
+      <a href="#" class="social-icon" title="Instagram">📷</a>
+      <a href="#" class="social-icon" title="LinkedIn">💼</a>
+      <a href="#" class="social-icon" title="Twitter/X">🐦</a>
+      <a href="#" class="social-icon" title="YouTube">▶️</a>
+    </div>
+    <hr class="footer-divider" />
+    <p class="footer-copy">
+      Organized by <span class="footer-college">Department of AI & DS</span> · Artificial Intelligence & Data
+      Science<br>
+      © 2026 INTELLIVERSE · All Rights Reserved
+    </p>
+  </footer>
+
+  <!-- ─── MODALS ─── -->
+
+  <!-- Poster Presentation -->
+  <div class="modal-overlay" id="modal-poster">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('poster')">✕</button>
+      <div class="modal-banner">
+        <div class="modal-icon">📋</div>
+        <h2 class="modal-title">Poster Presentation</h2>
+        <p class="modal-desc">Present your research, innovation, or project concept through a visually compelling poster
+          and defend it before an expert panel in a structured Q&amp;A session.</p>
+      </div>
+      <div class="modal-body">
+        <div class="rules-section">
+          <div class="rules-category">👥 Team Rules</div>
+          <ul class="rules-list">
+            <li class="rule-item">
+              <span class="rule-icon">👤</span>
+              <span class="rule-text">Maximum <strong>2 participants</strong> per team allowed.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="rules-section">
+          <div class="rules-category">🎤 Presentation Format</div>
+          <ul class="rules-list">
+            <li class="rule-item">
+              <span class="rule-icon">⏱️</span>
+              <span class="rule-text">Presentation duration: <strong>8–10 minutes</strong> per team.</span>
+            </li>
+            <li class="rule-item">
+              <span class="rule-icon">❓</span>
+              <span class="rule-text">A <strong>Q&amp;A session</strong> will follow the presentation by the judging
+                panel.</span>
+            </li>
+          </ul>
+        </div>
+        <div class="rules-section">
+          <div class="rules-category">📄 Content Rules</div>
+          <ul class="rules-list">
+            <li class="rule-item">
+              <span class="rule-icon">🖼️</span>
+              <span class="rule-text">Maximum <strong>10 slides</strong> allowed in the presentation.</span>
+            </li>
+          </ul>
+        </div>
+        <div style="margin-top: 2.5rem; text-align: center;">
+          <a href="https://forms.gle/pAUD99gE9Mq1s1679" target="_blank" class="btn-primary"
+            style="width: 100%; display: block;">🔗 Register for Poster Presentation</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Debugging -->
+  <div class="modal-overlay" id="modal-debugging">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('debugging')">✕</button>
+      <div class="modal-banner">
+        <div class="modal-icon">🐛</div>
+        <h2 class="modal-title">Debugging</h2>
+        <p class="modal-desc">Test your bug-hunting skills by identifying and fixing errors in code snippets. Speed,
+          accuracy, and logical thinking are key to winning this event.</p>
+      </div>
+      <div class="modal-body">
+        <div class="rules-section">
+          <div class="rules-category">📋 Event Rules</div>
+          <ul class="rules-list">
+            <li class="rule-item">
+              <span class="rule-icon">👤</span>
+              <span class="rule-text"><strong>Only 1 participant</strong> per team — this is a solo event.</span>
+            </li>
+            <li class="rule-item">
+              <span class="rule-icon">🎯</span>
+              <span class="rule-text">Theme / programming language will be <strong>provided during the event</strong>.
+                No prior disclosure.</span>
+            </li>
+            <li class="rule-item">
+              <span class="rule-icon">⏱️</span>
+              <span class="rule-text">Total duration: <strong>30 minutes</strong>. Complete as many tasks as possible
+                within the time.</span>
+            </li>
+          </ul>
+        </div>
+        <div style="margin-top: 2.5rem; text-align: center;">
+          <a href="https://forms.gle/pAUD99gE9Mq1s1679" target="_blank" class="btn-primary"
+            style="width: 100%; display: block;">🔗 Register for Debugging</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Prompt Crafting -->
+  <div class="modal-overlay" id="modal-prompt">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('prompt')">✕</button>
+      <div class="modal-banner">
+        <div class="modal-icon">🤖</div>
+        <h2 class="modal-title">Prompt Crafting</h2>
+        <p class="modal-desc">Harness the power of AI by engineering precise and creative prompts. Teams will compete to
+          craft the most effective prompts that produce optimal AI outputs for given challenges.</p>
+      </div>
+      <div class="modal-body">
+        <div class="rules-section">
+          <div class="rules-category">📋 Event Rules</div>
+          <ul class="rules-list">
+            <li class="rule-item">
+              <span class="rule-icon">👥</span>
+              <span class="rule-text">Team size: exactly <strong>3 members</strong> per team.</span>
+            </li>
+            <li class="rule-item">
+              <span class="rule-icon">⏱️</span>
+              <span class="rule-text">Total duration: <strong>30 minutes</strong>. Manage your time wisely.</span>
+            </li>
+            <li class="rule-item">
+              <span class="rule-icon">🚫</span>
+              <span class="rule-text">Participants <strong>must not switch browser tabs</strong> during the event.
+                Violations will lead to disqualification.</span>
+            </li>
+          </ul>
+        </div>
+        <div style="margin-top: 2.5rem; text-align: center;">
+          <a href="https://forms.gle/pAUD99gE9Mq1s1679" target="_blank" class="btn-primary"
+            style="width: 100%; display: block;">🔗 Register for Prompt Crafting</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Canva Design -->
+  <div class="modal-overlay" id="modal-canva">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('canva')">✕</button>
+      <div class="modal-banner">
+        <div class="modal-icon">🎨</div>
+        <h2 class="modal-title">Canva Design</h2>
+        <p class="modal-desc">Unleash your creativity and design flair using the Canva platform. Teams will be given a
+          design challenge and judged on visual appeal, clarity, and creativity.</p>
+      </div>
+      <div class="modal-body">
+        <div class="rules-section">
+          <div class="rules-category">📋 Event Rules</div>
+          <ul class="rules-list">
+            <li class="rule-item">
+              <span class="rule-icon">👥</span>
+              <span class="rule-text">Team size: exactly <strong>2 members</strong> per team.</span>
+            </li>
+            <li class="rule-item">
+              <span class="rule-icon">⏱️</span>
+              <span class="rule-text">Total duration: <strong>30 minutes</strong> to complete the design
+                challenge.</span>
+            </li>
+            <li class="rule-item">
+              <span class="rule-icon">🤖</span>
+              <span class="rule-text"><strong>AI tools are strictly not allowed.</strong> Only standard Canva features
+                may be used.</span>
+            </li>
+          </ul>
+        </div>
+        <div style="margin-top: 2.5rem; text-align: center;">
+          <a href="https://forms.gle/pAUD99gE9Mq1s1679" target="_blank" class="btn-primary"
+            style="width: 100%; display: block;">🔗 Register for Canva Design</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Free Fire -->
+  <div class="modal-overlay" id="modal-freefire">
+    <div class="modal gold-modal">
+      <button class="modal-close" onclick="closeModal('freefire')">✕</button>
+      <div class="modal-banner">
+        <div class="modal-icon">🔫</div>
+        <h2 class="modal-title">Esports Elite — Free Fire</h2>
+        <p class="modal-desc">Squad up and battle it out in the ultimate mobile battle royale. Strategy, teamwork, and
+          aim decide who wins.</p>
+      </div>
+      <div class="modal-body">
+        <div class="rules-section">
+          <div class="rules-category">📋 General Rules</div>
+          <ul class="rules-list">
+            <li class="rule-item"><span class="rule-icon">🚫</span><span class="rule-text"><strong>Gun skins are not
+                  allowed.</strong></span></li>
+            <li class="rule-item"><span class="rule-icon">🎯</span><span class="rule-text">Points calculated based on
+                <strong>kills and final position.</strong></span></li>
+            <li class="rule-item"><span class="rule-icon">🔌</span><span class="rule-text">Matches will <strong>not be
+                  restarted</strong> due to individual disconnections.</span></li>
+            <li class="rule-item"><span class="rule-icon">📊</span><span class="rule-text">Scoring system will be
+                <strong>decided by the coordinators.</strong></span></li>
+          </ul>
+        </div>
+        <div class="rules-section">
+          <div class="rules-category">🏟️ Match Procedure</div>
+          <ul class="rules-list">
+            <li class="rule-item"><span class="rule-icon">🗺️</span><span class="rule-text">Format: <strong>Battle
+                  Royale – Squad</strong> | Maps: <strong>Bermuda, Purgatory, Kalahari</strong></span></li>
+            <li class="rule-item"><span class="rule-icon">📱</span><span class="rule-text">Room joining details shared
+                <strong>10–15 minutes</strong> before match.</span></li>
+            <li class="rule-item"><span class="rule-icon">⏱️</span><span class="rule-text">Teams not present within
+                <strong>5–10 minutes</strong> of scheduled time will forfeit.</span></li>
+          </ul>
+        </div>
+        <div class="rules-section">
+          <div class="rules-category">⚙️ Game Settings</div>
+          <ul class="rules-list">
+            <li class="rule-item"><span class="rule-icon">✅</span><span class="rule-text">Character Skills:
+                <strong>Enabled</strong></span></li>
+            <li class="rule-item"><span class="rule-icon">🚫</span><span class="rule-text">Gun Attributes:
+                <strong>Disabled</strong> (Fair Play Settings)</span></li>
+            <li class="rule-item"><span class="rule-icon">🎮</span><span class="rule-text">Game Mode: <strong>Esports
+                  Mode</strong></span></li>
+          </ul>
+        </div>
+        <div style="margin-top: 2.5rem; text-align: center;">
+          <a href="https://forms.gle/pAUD99gE9Mq1s1679" target="_blank" class="btn-primary"
+            style="width: 100%; display: block; background: linear-gradient(135deg, var(--gold), #d97706); color: #000;">🔗
+            Register for Free Fire</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- E-Football -->
+  <div class="modal-overlay" id="modal-efootball">
+    <div class="modal gold-modal">
+      <button class="modal-close" onclick="closeModal('efootball')">✕</button>
+      <div class="modal-banner">
+        <div class="modal-icon">⚽</div>
+        <h2 class="modal-title">E-Football</h2>
+        <p class="modal-desc">Face off in a 1v1 e-football battle. Penalty shootouts settle close ties — may the best
+          player win.</p>
+      </div>
+      <div class="modal-body">
+        <div class="rules-section">
+          <div class="rules-category">📋 Event Rules</div>
+          <ul class="rules-list">
+            <li class="rule-item"><span class="rule-icon">👤</span><span class="rule-text">Mode: <strong>1 vs 1</strong>
+                — solo competition.</span></li>
+            <li class="rule-item"><span class="rule-icon">⏱️</span><span class="rule-text">Match Duration: <strong>6
+                  minutes</strong> per game.</span></li>
+            <li class="rule-item"><span class="rule-icon">🥅</span><span class="rule-text">Knockout tie → resolved by
+                <strong>Penalty Shootout.</strong></span></li>
+            <li class="rule-item"><span class="rule-icon">🔄</span><span class="rule-text">Maximum substitutions:
+                <strong>5–6 players</strong> per match.</span></li>
+            <li class="rule-item"><span class="rule-icon">📶</span><span class="rule-text">Players are responsible for
+                their own <strong>internet connection &amp; battery.</strong></span></li>
+            <li class="rule-item"><span class="rule-icon">📸</span><span class="rule-text">Winners must <strong>submit
+                  screenshots</strong> of match results.</span></li>
+          </ul>
+        </div>
+        <div style="margin-top: 2.5rem; text-align: center;">
+          <a href="https://forms.gle/pAUD99gE9Mq1s1679" target="_blank" class="btn-primary"
+            style="width: 100%; display: block; background: linear-gradient(135deg, var(--gold), #d97706); color: #000;">🔗
+            Register for E-Football</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dumb Charades -->
+  <div class="modal-overlay" id="modal-charades">
+    <div class="modal gold-modal">
+      <button class="modal-close" onclick="closeModal('charades')">✕</button>
+      <div class="modal-banner">
+        <div class="modal-icon">🎭</div>
+        <h2 class="modal-title">Dumb Charades</h2>
+        <p class="modal-desc">Guess the Act — act out movies, songs, and dialogues silently while your partner figures
+          it out before the clock runs out.</p>
+      </div>
+      <div class="modal-body">
+        <div class="rules-section">
+          <div class="rules-category">👥 Team Rules</div>
+          <ul class="rules-list">
+            <li class="rule-item"><span class="rule-icon">👥</span><span class="rule-text">Team Size: <strong>2
+                  members</strong></span></li>
+          </ul>
+        </div>
+        <div class="rules-section">
+          <div class="rules-category">🎬 Round Structure</div>
+          <ul class="rules-list">
+            <li class="rule-item"><span class="rule-icon">🟢</span><span class="rule-text"><strong>Round 1 —
+                  Easy:</strong> Movies &nbsp;|&nbsp; Time: <strong>30 seconds</strong></span></li>
+            <li class="rule-item"><span class="rule-icon">🟡</span><span class="rule-text"><strong>Round 2 —
+                  Medium:</strong> Songs &nbsp;|&nbsp; Time: <strong>40 seconds</strong></span></li>
+            <li class="rule-item"><span class="rule-icon">🔴</span><span class="rule-text"><strong>Round 3 —
+                  Hard:</strong> Dialogues &nbsp;|&nbsp; Time: <strong>45 seconds</strong></span></li>
+          </ul>
+        </div>
+        <div style="margin-top: 2.5rem; text-align: center;">
+          <a href="https://forms.gle/pAUD99gE9Mq1s1679" target="_blank" class="btn-primary"
+            style="width: 100%; display: block; background: linear-gradient(135deg, var(--gold), #d97706); color: #000;">🔗
+            Register for Dumb Charades</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pic 2 Song -->
+  <div class="modal-overlay" id="modal-pic2song">
+    <div class="modal gold-modal">
+      <button class="modal-close" onclick="closeModal('pic2song')">✕</button>
+      <div class="modal-banner">
+        <div class="modal-icon">🎵</div>
+        <h2 class="modal-title">Pic 2 Song</h2>
+        <p class="modal-desc">Guess the song from an image — music knowledge and quick thinking are your best tools in
+          this fast-paced event.</p>
+      </div>
+      <div class="modal-body">
+        <div class="rules-section">
+          <div class="rules-category">👥 Team Rules</div>
+          <ul class="rules-list">
+            <li class="rule-item"><span class="rule-icon">👥</span><span class="rule-text">Team Size: <strong>2
+                  members</strong></span></li>
+            <li class="rule-item"><span class="rule-icon">🖼️</span><span class="rule-text">Participants must
+                <strong>guess the song from an image.</strong></span></li>
+          </ul>
+        </div>
+        <div class="rules-section">
+          <div class="rules-category">⏱️ Round Timings</div>
+          <ul class="rules-list">
+            <li class="rule-item"><span class="rule-icon">🟢</span><span class="rule-text"><strong>Easy Round</strong> —
+                <strong>20 seconds</strong> per image</span></li>
+            <li class="rule-item"><span class="rule-icon">🟡</span><span class="rule-text"><strong>Medium Round</strong>
+                — <strong>15 seconds</strong> per image</span></li>
+            <li class="rule-item"><span class="rule-icon">🔴</span><span class="rule-text"><strong>Hard Round</strong> —
+                <strong>10 seconds</strong> per image</span></li>
+          </ul>
+        </div>
+        <div style="margin-top: 2.5rem; text-align: center;">
+          <a href="https://forms.gle/pAUD99gE9Mq1s1679" target="_blank" class="btn-primary"
+            style="width: 100%; display: block; background: linear-gradient(135deg, var(--gold), #d97706); color: #000;">🔗
+            Register for Pic 2 Song</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Snap Click (Photography) -->
+  <div class="modal-overlay" id="modal-snapclick">
+    <div class="modal gold-modal">
+      <button class="modal-close" onclick="closeModal('snapclick')">✕</button>
+      <div class="modal-banner">
+        <div class="modal-icon">📸</div>
+        <h2 class="modal-title">Snap Click — Photography</h2>
+        <p class="modal-desc">Capture the perfect moment with just your smartphone. Raw, authentic, and creative — let
+          your eye do the talking.</p>
+      </div>
+      <div class="modal-body">
+        <div class="rules-section">
+          <div class="rules-category">📋 Event Rules</div>
+          <ul class="rules-list">
+            <li class="rule-item"><span class="rule-icon">🎨</span><span class="rule-text">Theme:
+                <strong>On-spot</strong> — announced at the venue.</span></li>
+            <li class="rule-item"><span class="rule-icon">⏱️</span><span class="rule-text">Duration: <strong>1
+                  hour</strong> to capture your best shot.</span></li>
+            <li class="rule-item"><span class="rule-icon">📱</span><span class="rule-text">Device: <strong>Mobile
+                  only</strong> (Android or iOS)</span></li>
+            <li class="rule-item"><span class="rule-icon">🚫</span><span class="rule-text"><strong>Raw image only — no
+                  editing allowed.</strong> Filters and post-processing are strictly prohibited.</span></li>
+          </ul>
+        </div>
+        <div style="margin-top: 2.5rem; text-align: center;">
+          <a href="https://forms.gle/pAUD99gE9Mq1s1679" target="_blank" class="btn-primary"
+            style="width: 100%; display: block; background: linear-gradient(135deg, var(--gold), #d97706); color: #000;">🔗
+            Register for Snap Click</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ─── HAMBURGER MENU ───
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('navLinks').classList.toggle('open');
+    });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+    });
+
+    // ─── MODAL ───
+    function openModal(id) {
+      document.getElementById('modal-' + id).classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(id) {
+      document.getElementById('modal-' + id).classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    // Close on overlay click
+    document.querySelectorAll('.modal-overlay').forEach(overlay => {
+      overlay.addEventListener('click', e => {
+        if (e.target === overlay) {
+          overlay.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+    // Close on Escape
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.modal-overlay.open').forEach(m => {
+          m.classList.remove('open');
+          document.body.style.overflow = '';
+        });
+      }
+    });
+
+    // ─── SCROLL REVEAL ───
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // ─── FLOATING PARTICLES ───
+    const colors = ['rgba(14,165,233,0.6)', 'rgba(56,189,248,0.5)', 'rgba(245,158,11,0.4)', 'rgba(252,211,77,0.3)'];
+    const container = document.getElementById('particles');
+    for (let i = 0; i < 28; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      const size = Math.random() * 5 + 2;
+      p.style.cssText = `
+      width:${size}px; height:${size}px;
+      left:${Math.random() * 100}%;
+      background:${colors[Math.floor(Math.random() * colors.length)]};
+      animation-duration:${Math.random() * 18 + 12}s;
+      animation-delay:${Math.random() * 10}s;
+      filter:blur(${Math.random() * 1}px);
+    `;
+      container.appendChild(p);
+    }
+
+    // ─── ACTIVE NAV LINK ───
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 100) current = s.id;
+      });
+      navLinks.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--blue-light)' : '';
+      });
+    }, { passive: true });
+  </script>
+</body>
+
+</html>
