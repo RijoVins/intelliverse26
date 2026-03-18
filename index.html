@@ -277,26 +277,6 @@
       animation: float linear infinite;
     }
 
-    @keyframes float {
-      0% {
-        transform: translateY(110vh) scale(0);
-        opacity: 0;
-      }
-
-      10% {
-        opacity: 1;
-      }
-
-      90% {
-        opacity: 0.6;
-      }
-
-      100% {
-        transform: translateY(-10vh) scale(1);
-        opacity: 0;
-      }
-    }
-
     /* ─── SECTIONS ─── */
     section {
       position: relative;
@@ -567,6 +547,29 @@
     .footer-college {
       color: var(--blue-light);
       font-weight: 600;
+    }
+
+    .footer-logos-section {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .footer-logos-section img {
+      max-width: 90px;
+      height: auto;
+      transition: all 0.3s ease;
+    }
+
+    .footer-logos-section img:nth-child(2) {
+      max-width: 120px;
+    }
+
+    .footer-logos-section img:hover {
+      transform: scale(1.1);
+      filter: drop-shadow(0 0 8px rgba(14, 165, 233, 0.5));
     }
 
     .footer-developed {
@@ -1131,6 +1134,11 @@
       © 2026 INTELLIVERSE · All Rights Reserved
     </p>
     <a href="https://www.instagram.com/los_aidenz?igsh=OHc5dG5qYjFsZDR2" target="_blank" class="footer-developed"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="display: inline; margin-right: 0.3rem; vertical-align: middle;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="currentColor"></path><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"></circle></svg>Developed by Los Aidenz</a>
+    <div class="footer-logos-section">
+      <img src="images/5.jpeg" alt="Partner Logo 5">
+      <img src="images/6.png" alt="Partner Logo 6">
+      <img src="images/7.jpeg" alt="Partner Logo 7">
+    </div>
   </footer>
 
   <!-- ─── MODALS ─── -->
