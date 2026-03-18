@@ -85,6 +85,9 @@
     }
 
     .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
       font-family: 'Outfit', sans-serif;
       font-weight: 800;
       font-size: 1.4rem;
@@ -93,6 +96,12 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
       letter-spacing: 0.05em;
+    }
+
+    .nav-logo img {
+      max-width: 50px;
+      height: auto;
+      filter: drop-shadow(0 0 4px rgba(14, 165, 233, 0.3));
     }
 
     .nav-links {
@@ -874,7 +883,10 @@
 
   <!-- NAVBAR -->
   <nav>
-    <div class="nav-logo">INTELLIVERSE 2K26</div>
+    <div class="nav-logo">
+      <img src="images/Dept.png" alt="Department Logo">
+      <span>INTELLIVERSE 2K26</span>
+    </div>
     <ul class="nav-links" id="navLinks">
       <li><a href="#home">Home</a></li>
       <li><a href="#technical">Technical Events</a></li>
@@ -890,10 +902,10 @@
   <section id="home">
     <div style="position:relative;z-index:1">
       <div style="display: flex; align-items: center; justify-content: flex-end; gap: 1rem; margin-bottom: 3rem;">
-        <img src="images/Dept.png" alt="Department Logo" style="max-width: 60px; height: auto;">
         <img src="images/3.jpeg" alt="Logo 3" style="max-width: 60px; height: auto;">
         <img src="images/2.png" alt="Logo 2" style="max-width: 60px; height: auto;">
         <img src="images/1.png" alt="Logo 1" style="max-width: 60px; height: auto;">
+        <img src="images/4.jpeg" alt="Logo 4" style="max-width: 60px; height: auto;">
       </div>
       <div style="display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin-bottom: 1.5rem; margin-top: 2rem;">
         <img src="images/SMCE LOGO-02 (1).png" alt="SMCE Logo" style="max-width: 100px; height: auto; flex-shrink: 0;">
