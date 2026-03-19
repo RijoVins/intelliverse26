@@ -602,6 +602,37 @@
       box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
     }
 
+    .footer-register {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--gold), #d97706);
+      color: #000;
+      font-weight: 800;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      padding: 0.7rem 1.6rem;
+      border-radius: 50px;
+      border: none;
+      letter-spacing: 0.05em;
+      margin-top: 0.4rem;
+      margin-bottom: 0.4rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.25s, box-shadow 0.25s;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+    }
+
+    .footer-register:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(245, 158, 11, 0.5);
+    }
+
+    /* Desktop: Hide footer-register, show sticky-register */
+    @media (min-width: 769px) {
+      .footer-register {
+        display: none !important;
+      }
+    }
+
     /* ─── MODAL ─── */
     .modal-overlay {
       position: fixed;
@@ -895,14 +926,19 @@
       }
 
       footer {
-        padding-bottom: 0;
+        padding-bottom: 4.5rem;
       }
 
       .sticky-register {
-        bottom: 1rem;
+        bottom: 3.2rem;
         right: 1rem;
-        font-size: 0.8rem;
-        padding: 0.7rem 1.4rem;
+        font-size: 0.75rem;
+        padding: 0.6rem 1.2rem;
+        z-index: 150;
+      }
+
+      .footer-register {
+        display: none !important;
       }
 
       .footer-developed {
@@ -1141,6 +1177,7 @@
       © 2026 INTELLIVERSE · All Rights Reserved
     </p>
     <a href="https://www.instagram.com/los_aidenz?igsh=OHc5dG5qYjFsZDR2" target="_blank" class="footer-developed"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="display: inline; margin-right: 0.3rem; vertical-align: middle;"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="currentColor"></path><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"></circle></svg>Developed by Los Aidenz</a>
+    <a href="https://forms.gle/pAUD99gE9Mq1s1679" target="_blank" class="footer-register">✨ Register Now</a>
     <div class="footer-logos-section">
       <a href="https://www.instagram.com/los_aidenz?igsh=OHc5dG5qYjFsZDR2" target="_blank" style="display: inline; text-decoration: none;">
         <img src="images/5-removebg-preview.png" alt="Partner Logo 5" style="cursor: pointer;">
