@@ -552,26 +552,35 @@
 
     .footer-logos-section {
       display: flex;
-      gap: 1.5rem;
+      flex-wrap: wrap;
+      gap: 1rem;
       justify-content: center;
       align-items: center;
       margin-top: 0.3rem;
       margin-left: -2rem;
       margin-right: -2rem;
       margin-bottom: 0;
-      padding: 0.4rem 2rem;
+      padding: 0.6rem 1.5rem;
       background: #ffffff;
       width: calc(100% + 4rem);
+      box-sizing: border-box;
+    }
+
+    .footer-logos-section a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .footer-logos-section img {
-      max-width: 90px;
+      max-width: 85px;
       height: auto;
       transition: all 0.3s ease;
+      object-fit: contain;
     }
 
     .footer-logos-section a:nth-child(2) img {
-      max-width: 280px;
+      max-width: 160px;
     }
 
     .footer-logos-section img:hover {
@@ -944,6 +953,22 @@
       .footer-developed {
         margin-top: 0.2rem !important;
         margin-bottom: 0.2rem !important;
+      }
+
+      .footer-logos-section {
+        gap: 0.8rem !important;
+        padding: 0.6rem 1rem !important;
+        width: 100%;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+
+      .footer-logos-section img {
+        max-width: 70px !important;
+      }
+
+      .footer-logos-section a:nth-child(2) img {
+        max-width: 130px !important;
       }
     }
 
