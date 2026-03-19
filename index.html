@@ -552,24 +552,27 @@
 
     .footer-logos-section {
       display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
+      flex-wrap: nowrap;
+      gap: 1.5rem;
       justify-content: center;
       align-items: center;
       margin-top: 0.3rem;
-      margin-left: -2rem;
-      margin-right: -2rem;
+      margin-left: calc(-50vw + 50%);
+      margin-right: calc(-50vw + 50%);
       margin-bottom: 0;
-      padding: 0.6rem 1.5rem;
+      padding: 0.8rem 2rem;
       background: #ffffff;
-      width: calc(100% + 4rem);
+      width: 100vw;
       box-sizing: border-box;
+      overflow-x: auto;
+      overflow-y: hidden;
     }
 
     .footer-logos-section a {
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-shrink: 0;
     }
 
     .footer-logos-section img {
@@ -586,6 +589,16 @@
     .footer-logos-section img:hover {
       transform: scale(1.1);
       filter: drop-shadow(0 0 8px rgba(14, 165, 233, 0.5));
+    }
+
+    /* Hide scrollbar while keeping scrolling functionality */
+    .footer-logos-section::-webkit-scrollbar {
+      display: none;
+    }
+
+    .footer-logos-section {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
 
     .footer-developed {
@@ -956,19 +969,52 @@
       }
 
       .footer-logos-section {
-        gap: 0.8rem !important;
-        padding: 0.6rem 1rem !important;
-        width: 100%;
-        margin-left: 0 !important;
-        margin-right: 0 !important;
+        gap: 1rem !important;
+        padding: 0.8rem 1.5rem !important;
+        width: 100vw !important;
+        margin-left: calc(-50vw + 50%) !important;
+        margin-right: calc(-50vw + 50%) !important;
+        margin-top: 0.3rem !important;
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        flex-wrap: nowrap !important;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .footer-logos-section a {
+        flex-shrink: 0;
       }
 
       .footer-logos-section img {
-        max-width: 70px !important;
+        max-width: 75px !important;
       }
 
       .footer-logos-section a:nth-child(2) img {
-        max-width: 130px !important;
+        max-width: 140px !important;
+      }
+    }
+
+    /* ─── DESKTOP FOOTER LOGOS ─── */
+    @media (min-width: 769px) {
+      .footer-logos-section {
+        width: 100% !important;
+        margin-left: -2rem !important;
+        margin-right: -2rem !important;
+        overflow-x: visible !important;
+        overflow-y: visible !important;
+        flex-wrap: wrap;
+      }
+
+      .footer-logos-section a {
+        flex-shrink: auto;
+      }
+
+      .footer-logos-section img {
+        max-width: 90px !important;
+      }
+
+      .footer-logos-section a:nth-child(2) img {
+        max-width: 200px !important;
       }
     }
 
